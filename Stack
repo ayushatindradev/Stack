@@ -1,0 +1,87 @@
+#include <iostream>
+using namespace std;
+#define SIZE 5;
+class Stack
+{
+public:
+    int arr[SIZE];
+    int top;
+
+    Stack()
+    {
+        top = -1;
+    }
+    void push(int value)
+    {
+        if (top == SIZE - 1)
+        {
+            cout << "Stack overflow" << endl;
+            return;
+        }
+        arr[++top] = value;
+        cout << "Pushed: " << value << endl;
+    }
+    void pop()
+    {
+        if (top == -1)
+        {
+            cout << "Stack is empty" << endl;
+            return;
+        }
+        cout << "Popped: " << arr[top] << endl;
+        top--;
+    }
+    void display()
+    {
+        if (top == -1)
+        {
+            cout << "Stack is empty" << endl;
+            return;
+        }
+        cout << "Stack element:";
+        for (int i = top; i >= 0; i--)
+        {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+    }
+};
+void hello(int n)
+{
+    if (n == 0)
+    {
+        return;
+    }
+    cout << "Hello " << n << endl;
+    hello(n - 1);
+}
+
+int main()
+{
+    // stack data structure
+    // What is stack?
+    // A stack is a special tupe of data structures where elemenst are added and removed from the same en. It workd like a stack of plates- you can only add or remove the top one first
+    // 2️⃣ What are the two main operations in a stack?
+    // Puch(top add an elemenst ) and pop(to remove tge elemenst )
+    // 3️⃣ Which data structure principle does a stack follow?
+    // LIFO ->(last in first out) The last elemenst is added the first one remove
+    // 4️⃣ What is the time complexity of push and pop operations in a stack?
+    // The time complexity of push and pop is o(1),meaning super fast
+    // 5️⃣ Can a stack be implemented using an array?
+    // Yes stack is implemented using array
+    // 6️⃣ Write a simple C++ program to implement a stack using an array.
+    // 7️⃣ How can a stack be implemented using a linked list?
+    // Istead of array we can use linkedlist ,where each nodes contains a value and a pointer to nest node.The top of the stack is always the head of linkedlist.
+
+    // 8️⃣ What happens when we try to pop an element from an empty stack?
+    // the stack is empty , so there's nothing to remove .Thisis called stack underflow.
+
+    // 9️⃣ What is stack overflow and underflow?
+    // stack overflow happens when you push too many elemenst and exeed the stack size;
+    // stack underflow happen ehrn you pop from an elemsnt an empty stack.
+
+    // 🔟 How is a stack used in function calls (recursion)?
+    // every function call is stored in a stack.wen a function finished ,it gets poped from the stack .This is how recursion works.
+
+    //
+}
